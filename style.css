@@ -1,0 +1,135 @@
+:root{
+/*	--bg2: #f0e6ef;*/
+/*	--fg2: #404095;*/
+}
+
+*{
+	font-family: nunito;
+}
+
+h1 {
+	color: #444;
+}
+
+div {
+/*	border: 4px solid #222;*/
+	padding: 3px;
+	max-resolution: 1px;
+}
+
+body {
+	background-color: #eee;
+}
+
+.binaContainer {
+/*	padding: 2px;*/
+
+	background-color: #eee;
+display: flex;
+align-items: center;
+justify-content: center	;
+/*margin-top: 300px;*/
+flex-direction: column;
+}
+
+.binaButtons{ 
+	width: 800px;
+	font-size: 27px;
+}
+
+.binaButton {
+	width: 50px;
+	height: 50px;
+	border: none;
+/*	background-color: #80ed99;*/
+	background-color: #ddd;
+	font-size: 19px;
+	border-radius: 50%;
+	margin: 8px;
+	transition: 400ms;
+}
+
+.binaButton.selected{
+/*	box-shadow: 0 0 8px 7px #80ed99;*/
+	box-shadow: 0 0 0 7px #333 inset;
+/*	border: 7px solid #333;*/
+/*	background-color: #dfffe6;*/
+	background-color: #eee;
+
+	transform: scale(1.1);
+}
+
+.bina{
+	padding: 28px;
+	border-radius: 20px;
+	background-color: #ddd;
+	font-size: 20px;
+	width: 800px;
+}
+
+.stage {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 7px;
+	border: 2px solid #222;
+	padding: 17px;
+	margin-bottom: 17px;
+	border-radius: 13px;
+	margin-top: 7px;
+}
+
+.room {
+/*	display: inline;*/
+/*	border-radius: 50%;*/
+	border-radius: 30px;
+	border: 2px solid #333;
+	font-size: 16px;
+	min-width: 30px;
+	height: 30px;
+	max-resolution: 5px;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+/*	text-align: center;*/
+	z-index: 98;
+}
+
+.room > .caption {
+	position: absolute;
+	z-index: 99;
+	transform: scale(0);
+	opacity: 0.6;
+	transition: 200ms;
+	bottom: 105%;
+	pointer-events: none;
+	background-color: #eee;
+	border: 2px solid #333;
+	box-shadow: 0 4px 7px #2228;
+	color: #333;
+	border-radius: 13px;
+	width: 200px;
+/*	height: 150px;*/
+/*	text-align: center;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 25px 17px;
+}
+.room:hover > .caption {
+	transform: scale(1);
+	opacity: 1;
+}
+
+
+
+.room[state|="lesson"]{
+	background-color: hsl(134deg, 90%, 67%);
+}
+.room[state|="repair"]{
+	background-color: hsl(0deg, 90%, 67%);
+}
+.room[state|="special"]{
+	background-color: hsl(60deg, 90%, 67%);
+}
