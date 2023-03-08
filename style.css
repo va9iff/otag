@@ -99,7 +99,8 @@ flex-direction: column;
 .room > .caption {
 	position: absolute;
 	z-index: 99;
-	transform: scale(0);
+	transform: translateY(15px) scale(0);
+	transform-origin: bottom;
 	opacity: 0.6;
 	transition: 200ms;
 	bottom: 105%;
@@ -118,7 +119,7 @@ flex-direction: column;
 	padding: 25px 17px;
 }
 .room:hover > .caption {
-	transform: scale(1);
+	transform: translateY(0) scale(1);
 	opacity: 1;
 }
 
