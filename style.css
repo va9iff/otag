@@ -5,9 +5,12 @@
 
 *{
 	font-family: nunito;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-h1 {
+p, h1, h2, h3 {
 	color: #444;
 }
 
@@ -22,7 +25,10 @@ body {
 }
 
 .binaContainer {
-/*	padding: 2px;*/
+	margin-top: 50px;
+	top: 0;
+	position: sticky;
+	padding: 2px;
 
 	background-color: #eee;
 display: flex;
@@ -33,6 +39,7 @@ flex-direction: column;
 }
 
 .binaButtons{ 
+	margin-left: 30px;
 	width: 800px;
 	font-size: 27px;
 }
@@ -46,7 +53,7 @@ flex-direction: column;
 	font-size: 19px;
 	border-radius: 50%;
 	margin: 8px;
-	transition: 400ms;
+/*	transition: 400ms;*/
 }
 
 .binaButton.selected{
@@ -84,16 +91,23 @@ flex-direction: column;
 	border-radius: 30px;
 	border: 2px solid #333;
 	font-size: 16px;
-	min-width: 30px;
-	height: 30px;
+	min-width: 40px;
+	height: 40px;
 	max-resolution: 5px;
-	background-color: #fff;
+	background-color: #efefef;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	position: relative;
 /*	text-align: center;*/
 	z-index: 98;
+	transition: 350ms;
+}
+
+.room.selected {
+	box-shadow: 0 0 0 7px #333a;
+	transform: scale(1.3);
+	z-index: 180;
 }
 
 .room > .caption {
@@ -133,4 +147,57 @@ flex-direction: column;
 }
 .room[state|="special"]{
 	background-color: hsl(60deg, 90%, 67%);
+}
+
+v-main {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.page {
+	padding-left: 26px;
+	display: flex;
+	justify-content: left;
+	align-items: flex-start;
+	overflow: scroll;
+	height: 100%;
+}
+
+@keyframes openSideContent {
+	from {
+/*		width: 0;*/
+/*		flex: unset;*/
+		transform: translateX(-100px);
+		opacity: 0;
+	} to {
+		transform: translateX(0);
+		opacity: 1;
+/*		flex: 1;*/
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.content {
+	position: sticky;
+	overflow-Y: scroll;
+	top: 0;
+	animation: openSideContent 300ms;
+	transform-origin: left;
+	flex: 1;
+	padding-left: 20px
+}
+
+.header {
+	padding: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.header>h1{
+	flex: 1;
+	margin-left: 40px;
 }
