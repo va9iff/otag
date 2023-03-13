@@ -70,6 +70,29 @@ class VMain extends VLitElement {
 				3
 			</button>
 			${data[selectedBina].bina}
+			<select name="Həftə" id="">
+				<option value="normal" disabled>Həftə</option>
+				<option value="üst">Üst</option>
+				<option value="normal">Normal</option>
+				<option value="alt">Alt</option>
+			</select>
+			<select name="Növbə" id="">
+				<option value="" disabled>Növbə</option>
+				<option value="">Səhər</option>
+				<option value="">Günorta</option>
+			</select>
+			<select name="Saat" id="">
+				<option value="" disabled>Saat</option>
+				<option value="">8:30</option>
+				<option value="">10:00</option>
+				<option value="">11:30</option>
+				<option value="" disabled></option>
+				<option value="">14:00</option>
+				<option value="">15:30</option>
+				<option value="">17:00</option>
+			</select>
+			
+
 		</div>
 		<div class="page">
 			<div class="binaContainer">
